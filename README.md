@@ -1,2 +1,145 @@
-# uk_police_etl
+# UK Police Data ETL
 Personal ETL project to extract, transform and load data from data.police.uk for visual analysis with Streamlit
+
+## Project Setup
+The following instructions will help you set up the project on a Windows machine.
+1. **Clone the Repository**: 
+   ```bash
+   git clone https://github.com/Grant-Oglesby/uk_police_etl.git
+   ```
+2. **Create a virtual environment**:
+   ```
+   python -m venv venv
+   ```
+3. **Activate the virtual environment**:
+   ```
+   .\venv\Scripts\activate
+   ```
+4. **Install the required packages**:
+   ```
+   pip install -e .
+   ```
+5. **Run the ETL script**:
+   ```
+   run_etl
+   ```
+6. **Run the Streamlit app**:
+   ```
+   streamlit run streamlit/app.py
+   ```
+
+## Project Testing
+Execute following after completing the project setup steps:
+**Run all tests**:
+   ```
+   run_tests
+   ```
+
+## Project Initiatives
+To create a Streamlit app for visual analysis of UK police data, the following initiatives were undertaken:
+1. **Data Extraction**: Developed a script to extract data from the UK Police API, handling pagination and rate limiting.
+2. **Data Transformation**: Implemented data cleaning and transformation processes to ensure data quality and consistency.
+3. **Data Loading**: Create a local file to be used in the Streamlit app, containing the cleaned and transformed data.
+4. **Streamlit App Development**: Built an interactive Streamlit app to visualize and analyze the UK police data, including features like filtering and charting.
+5. **Testing**: Wrote unit, integration, and end-to-end tests to ensure the reliability and correctness of the ETL process and the Streamlit app.
+6. **Documentation**: Documented the project setup, usage, and testing procedures in a comprehensive README file.
+
+## Project Structure
+The project is organized into the following directories and files:
+```uk_police_etl/
+│├── extract/
+││   ├── __init__.py
+││   └── extract.py
+│├── transform/
+││   ├── __init__.py
+││   └── transform.py
+│├── load/
+││   ├── __init__.py
+││   └── load.py
+│├── streamlit/
+││   ├── __init__.py
+││   └── app.py
+│├── tests/
+││   ├── __init__.py
+││   ├── test_extract.py
+││   ├── test_transform.py
+││   └── test_load.py
+│├── logs/
+││   └── etl.log
+│└── README.md
+│└── pyproject.toml
+│└── .flake8
+│└── .gitignore
+│└── requirements.txt
+│└── requirements-setup.txt
+│└── main.py
+```
+
+## Data Source
+The data is sourced from the UK Police API, which provides access to street-level crime data and outcomes for England, Wales, and Northern Ireland. More information can be found at [data.police.uk](https://data.police.uk/docs/).
+
+## Error Handling and Logging
+The ETL scripts include error handling to manage potential issues during data extraction, transformation, and loading. Logging is implemented to track the ETL process and record any errors encountered.
+Logs are stored in the `logs/etl.log` file.
+
+## Definition of Done
+The project is considered complete when:
+1. The ETL process successfully extracts, transforms, and loads data from the UK Police API.
+2. The Streamlit app is fully functional and allows for interactive data visualization and analysis.
+3. All tests pass successfully, ensuring the reliability of the ETL process and the Streamlit app.
+4. Comprehensive documentation is provided, including setup instructions, usage guidelines, and testing procedures.
+5. Error handling and logging are implemented to ensure robustness and traceability of the ETL process.
+6. The project is organized and follows best practices for code structure and readability.
+7. The project meets the initial objectives and requirements outlined in the project plan.
+
+## Future Enhancements
+Potential future enhancements for the project include:
+1. **Additional Data Sources**: Integrate more data sources for a richer analysis.
+2. **Advanced Visualizations**: Implement more complex visualizations and interactive features in the Streamlit app.
+3. **Performance Optimization**: Optimize the ETL process for larger datasets and improve the performance of the Streamlit app.
+
+## Kanban Board
+```mermaid
+kanban
+    Epics
+      Data (Epic 1:
+        As a data engineer, I want to extract data from the UK Police API so that I can analyze crime trends.)
+      Data (Epic 2:
+        As a data engineer, I want to transform the raw data into a structured format so that it is easier to work with.)
+      Data (Epic 3:
+        As a data engineer, I want to visualize the data in the Streamlit app so that I can gain insights from it.)
+    User Stories
+      Data (User Story 1:
+        As a data engineer, I want to handle pagination and rate limiting when extracting data from the UK Police API so that I can retrieve all available data without being blocked.
+          Task 1: Implement pagination handling in the extraction script.
+          Task 2: Implement rate limiting handling in the extraction script.
+          Task 3: Test the extraction script to ensure it retrieves all data correctly.
+          Task 4: Document the extraction process and any limitations.
+      )
+      Data (User Story 2:
+        As a data engineer, I want to clean and transform the raw data so that it is consistent and ready for analysis.
+          Task 1: Identify and handle missing or inconsistent data.
+          Task 2: Normalize data formats such as date formats and categorical variables.
+          Task 3: Create a structured schema for the transformed data.
+          Task 4: Test the transformation process to ensure data quality.
+          Task 5: Document the transformation process and any assumptions made.
+      )
+      Data (User Story 3:
+        As a data engineer, I want to visualize the data in the Streamlit app so that I can gain insights from it.
+          Task 1: Design the layout and user interface of the Streamlit app.
+          Task 2: Implement data filtering and selection features.
+          Task 3: Create visualizations to display the data.
+          Task 4: Test the Streamlit app to ensure functionality and usability.
+          Task 5: Document the app features and usage instructions.
+      )
+    To Do: User Story 1
+        Task 1: Implement pagination handling in the extraction script.
+        Task 2: Implement rate limiting handling in the extraction script.
+        Task 3: Test the extraction script to ensure it retrieves all data correctly.
+        Task 4: Document the extraction process and any limitations.
+      
+    In Progress: User Story 1
+
+    Done
+
+```
