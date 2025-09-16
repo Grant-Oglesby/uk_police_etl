@@ -1,0 +1,25 @@
+# Ignore all files in the data/extract directory
+data/extract/
+
+# Ignore all log files
+logs/
+
+# Ignore all .env files
+.env
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environment directories
+venv/
+env/
+.venv/
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
