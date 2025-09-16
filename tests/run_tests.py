@@ -2,7 +2,7 @@ import pytest
 import logging
 import time
 import os
-import sys
+
 
 os.makedirs('logs', exist_ok=True)
 datetime = time.strftime('%Y-%m-%d_%H-%M-%S')
