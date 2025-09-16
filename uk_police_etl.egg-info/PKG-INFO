@@ -1,3 +1,15 @@
+Metadata-Version: 2.4
+Name: uk_police_etl
+Version: 0.1.0
+Summary: A personal project for developing additional skills in ETL.
+Author-email: Grant Oglesby <grant.oglesby@hotmail.co.uk>
+Project-URL: Homepage, https://github.com/Grant-Oglesby/uk_police_etl.git
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
 # UK Police Data ETL
 Personal ETL project to extract, transform and load data from data.police.uk for visual analysis with Streamlit
 

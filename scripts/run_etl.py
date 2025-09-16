@@ -1,0 +1,31 @@
+import logging
+import os
+import time
+from src.extract.extract import extract
+
+os.makedirs('logs', exist_ok=True)
+datetime = time.strftime('%Y-%m-%d_%H-%M-%S')
+logging.basicConfig(filename=f'logs/{datetime}.log', level=logging.INFO)
+
+
+def main():
+    logging.info("Running ETL process...")
+    # Here you would add the actual ETL logic
+    # For example:
+    raw_data = extract()
+    # Temporarily save raw data to CSV files for inspection
+    for i, df in enumerate(raw_data):
+        df.to_csv(f'data/extract/raw_data_part_{i}.csv', index=False)
+    # transform_data()
+    # load_data()
+    logging.info("ETL process completed.")
+    logging.shutdown()
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        logging.error(f"ETL process failed: {e}")
+        logging.shutdown()
+        exit(1)
