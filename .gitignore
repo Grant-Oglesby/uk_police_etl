@@ -1,5 +1,5 @@
-# Ignore all files in the data/extract directory
-data/extract/
+# Ignore all files in the data/ directory
+data/
 
 # Ignore all log files
 logs/
