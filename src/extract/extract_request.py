@@ -17,5 +17,6 @@ def extract_request(url):
         logger.error(
             f"Request to {url} failed with status code {response.status_code}"
         )
-        time.sleep(2 ** attempt)  # Exponential backoff
+        # Exponential backoff
+        time.sleep(2 ** attempt)  
     raise ValueError("Bad Request")

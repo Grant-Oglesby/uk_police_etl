@@ -11,8 +11,7 @@ def test_extract():
     assert len(test_Data) > 0
     assert isinstance(test_Data[0], pd.DataFrame)
     assert isinstance(test_Data[1], pd.DataFrame)
-
-
-if __name__ == "__main__":
-    test_extract()
-    print("All tests passed.")
+    assert isinstance(test_Data[2], pd.DataFrame)
+    assert len(test_Data[0]) > 0
+    assert len(test_Data[1]) > 0
+    assert len(test_Data[2]) > 0
