@@ -1,5 +1,4 @@
 from src.extract.extract_request import extract_request
-from src.extract import call_limit
 import pandas as pd
 import logging
 
@@ -41,14 +40,3 @@ def extract_data(api, forces_df, dates_df):
     crime_data_df = pd.DataFrame(all_crime_data)
     logger.info("Crime data extraction completed.")
     return crime_data_df
-
-
-if __name__ == "__main__":
-    # Example usage (this would normally be called from the main ETL script)
-    from src.extract.extract_forces import extract_forces
-    from src.extract.extract_dates import extract_dates
-
-    forces_df = extract_forces(call_limit.base_api)
-    dates_df = extract_dates(call_limit.base_api)
-    crime_data_df = extract_data(call_limit.base_api, forces_df, dates_df)
-    print(crime_data_df.head())
