@@ -26,6 +26,7 @@ tests/component_tests/test_extract_data.py
 tests/component_tests/test_extract_dates.py
 tests/component_tests/test_extract_forces.py
 tests/component_tests/test_extract_request.py
+tests/component_tests/test_transform.py
 tests/e2e_tests/__init__.py
 tests/integration_tests/__init__.py
 tests/integration_tests/test_extract.py

@@ -46,6 +46,10 @@ Execute following after completing the project setup steps:
    ```
    run_tests
    ```
+- Currently, tests are written using `pytest` and are located in the `tests/` directory.
+- Tests include unit tests for individual functions, integration tests for combined components, and end-to-end tests for the entire ETL process.
+- Tests beyond integration extract tests are still being developed, but involve making a true API call to ensure the ETL process works as expected.
+- This is intended to be changed to use mocking to avoid making real API calls during testing.
 
 ## Project Initiatives
 To create a Streamlit app for visual analysis of UK police data, the following initiatives were undertaken:
@@ -144,7 +148,7 @@ kanban
       Data (User Story 3:
         As a data engineer, I want to load the transformed data into a local file so that it can be easily accessed for analysis.
           Task 1: Develop testing for all loading functions.
-          Task 2: Choose an appropriate file format (e.g., CSV, Parquet) for the local file.
+          Task 2: Choose an appropriate file format for the local file.
           Task 3: Implement the loading process to save the transformed data to the chosen file format.
           Task 4: Test the loading process to ensure data integrity and accessibility.
           Task 5: Document the loading process and any file format considerations.
@@ -153,7 +157,7 @@ kanban
         As a data engineer, I want to implement extensive testing for the ETL process so that I can ensure data quality and reliability.
           Task 1: Develop integration tests to validate the interaction between extraction, transformation, and loading components.
           Task 2: Create end-to-end tests to simulate the entire ETL process from data extraction to loading.
-          Task 3: Implement automated testing using a testing framework (e.g., pytest).
+          Task 3: Implement automated testing using a testing framework.
           Task 4: Run tests regularly to catch any issues early in the development process.
           Task 5: Document the testing strategy and any known limitations.
       )
@@ -165,13 +169,20 @@ kanban
           Task 4: Test the Streamlit app to ensure functionality and usability.
           Task 5: Document the app features and usage instructions.
       )
-    To Do: User Story 1
-          Task 5: Document the extraction process and any limitations.
-      
-    In Progress: User Story 1
-          Task 4: Test the extraction script to ensure it retrieves all data correctly.
-
-    Done: User Story 1
+    To Do: User Story 2
+          Task 2: Identify and handle missing or inconsistent data.
+          Task 3: Normalize data formats such as date formats and categorical variables.
+          Task 4: Create a structured schema for the transformed data.
+          Task 5: Test the transformation process to ensure data quality.
+          Task 6: Document the transformation process and any assumptions made.
+    In Progress: User Story 2
+          Task 1: Develop testing for all transformation functions.
+    Done: 
+      Data (User Story 1:
+        As a data engineer, I want to handle pagination and rate limiting when extracting data from the UK Police API so that I can retrieve all available data without being flagged as malicious activity.
           Task 1: Develop testing for all extraction functions.
           Task 2: Implement rate limiting handling in the extraction script.
+          Task 3: Test the extraction script to ensure it retrieves all data correctly.
+          Task 4: Document the extraction process and any limitations.
+      )
 ```

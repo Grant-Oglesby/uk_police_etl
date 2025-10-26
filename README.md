@@ -13,7 +13,7 @@ The following instructions will help you set up the project on a Windows machine
    ```
 3. **Activate the virtual environment**:
    ```
-   .\venv\Scripts\activate
+   source .venv\Scripts\activate
    ```
 4. **Install the required packages**:
    ```

@@ -16,8 +16,11 @@ def main():
     # Temporarily save raw data to CSV files for inspection
     for i, df in enumerate(raw_data):
         df.to_csv(f'data/extract/raw_data_part_{i}.csv', index=False)
-    # transform_data()
-    # load_data()
+    logging.info("Data extraction completed and saved to CSV files.")
+    # clean_df = transform_data(raw_data)
+    logging.info("Data transformation completed.")
+    # load_data(clean_df)
+    logging.info("Data loading completed.")
     logging.info("ETL process completed.")
     logging.shutdown()
 
