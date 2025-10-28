@@ -9,7 +9,6 @@ logger = logging.getLogger(__name__)
 
 # Function to extract date information from the UK Police API
 def extract_dates(api):
-    logger.info("Extracting date data from the UK Police API...")
     response = extract_request(
         api + "crimes-street-dates"
     )

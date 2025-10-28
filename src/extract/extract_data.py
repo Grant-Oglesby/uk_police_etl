@@ -8,7 +8,6 @@ logger = logging.getLogger(__name__)
 
 # Function to extract crime data from the UK Police API
 def extract_data(api, forces_df, dates_df):
-    logger.info("Extracting crime data from the UK Police API...")
     all_crime_data = []
 
     for _, force in forces_df.iterrows():

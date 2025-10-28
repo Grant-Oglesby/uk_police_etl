@@ -10,7 +10,6 @@ logger = logging.getLogger(__name__)
 
 # Function to extract force data from the UK Police API
 def extract_forces(api):
-    logger.info("Extracting force data from the UK Police API...")
     response = extract_request(api + "forces")
     forces_data = response.json()
     logger.info("Converting force data to DataFrame...")
