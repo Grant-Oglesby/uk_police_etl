@@ -2,6 +2,8 @@ import logging
 import os
 import time
 from src.extract.extract import extract
+from src.transform import transform
+
 
 os.makedirs('logs', exist_ok=True)
 datetime = time.strftime('%Y-%m-%d_%H-%M-%S')
@@ -21,7 +23,8 @@ def main():
     for i, df in enumerate(raw_data):
         df.to_csv(f'data/extract/raw_data_part_{i}.csv', index=False)
     logging.info("Data extraction completed and saved to CSV files.")
-    # clean_df = transform_data(raw_data)
+    clean_df = transform.main(raw_data)
+    clean_df.to_csv('data/transform/clean_data.csv', index=False)
     logging.info("Data transformation completed.")
     # load_data(clean_df)
     logging.info("Data loading completed.")
