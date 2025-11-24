@@ -6,6 +6,9 @@ from src.transform import transform
 
 
 os.makedirs('logs', exist_ok=True)
+os.makedirs('data/extract', exist_ok=True)
+os.makedirs('data/transform', exist_ok=True)
+os.makedirs('data/load', exist_ok=True)
 datetime = time.strftime('%Y-%m-%d_%H-%M-%S')
 logging.basicConfig(filename=f'logs/{datetime}.log', level=logging.INFO)
 
@@ -13,8 +16,8 @@ logging.basicConfig(filename=f'logs/{datetime}.log', level=logging.INFO)
 def main():
     # Open existing logging in a separate terminal window for real-time
     # monitoring
-    os.system(f'gnome-terminal -- bash -c "tail -f logs/{datetime}.log; '
-              f'exec bash"')
+    # os.system(f'gnome-terminal -- bash -c "tail -f logs/{datetime}.log; '
+    #           f'exec bash"')
     logging.info("Running ETL process...")
     # Here you would add the actual ETL logic
     # For example:

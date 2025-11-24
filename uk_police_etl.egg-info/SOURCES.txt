@@ -36,4 +36,5 @@ uk_police_etl.egg-info/PKG-INFO
 uk_police_etl.egg-info/SOURCES.txt
 uk_police_etl.egg-info/dependency_links.txt
 uk_police_etl.egg-info/entry_points.txt
+uk_police_etl.egg-info/requires.txt
 uk_police_etl.egg-info/top_level.txt
