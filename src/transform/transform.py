@@ -5,10 +5,10 @@ def extrapolate_long_lat(crime_data_df):
     # Extract latitude and longitude from location column
     crime_data_df = crime_data_df.assign(
         latitude=crime_data_df['location'].apply(
-            lambda x: eval(x)['latitude'] if pd.notnull(x) else x
+            lambda x: eval(x)['latitude'] if pd.notnull(x) and isinstance(x, str) else x
         ),
         longitude=crime_data_df['location'].apply(
-            lambda x: eval(x)['longitude'] if pd.notnull(x) else x
+            lambda x: eval(x)['longitude'] if pd.notnull(x) and isinstance(x, str) else x
         )
     )
     return crime_data_df
