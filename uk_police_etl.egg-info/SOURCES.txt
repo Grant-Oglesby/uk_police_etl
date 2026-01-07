@@ -17,7 +17,7 @@ src/load/load.py
 src/transform/__init__.py
 src/transform/transform.py
 streamlit/__init__.py
-streamlit/app.py
+streamlit/main.py
 tests/__init__.py
 tests/run_tests.py
 tests/component_tests/__init__.py
