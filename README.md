@@ -9,7 +9,7 @@ The following instructions will help you set up the project on a Windows machine
    ```
 2. **Create a virtual environment**:
    ```
-   python -m venv venv
+   python -m venv .venv
    ```
 3. **Activate the virtual environment**:
    ```
