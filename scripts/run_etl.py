@@ -4,13 +4,13 @@ import time
 from src.extract.extract import extract
 from src.transform import transform
 
-
-os.makedirs('logs', exist_ok=True)
-os.makedirs('data/extract', exist_ok=True)
-os.makedirs('data/transform', exist_ok=True)
-os.makedirs('data/load', exist_ok=True)
-datetime = time.strftime('%Y-%m-%d_%H-%M-%S')
-logging.basicConfig(filename=f'logs/{datetime}.log', level=logging.INFO)
+def log_tools():
+    os.makedirs('logs', exist_ok=True)
+    os.makedirs('data/extract', exist_ok=True)
+    os.makedirs('data/transform', exist_ok=True)
+    os.makedirs('data/load', exist_ok=True)
+    datetime = time.strftime('%Y-%m-%d_%H-%M-%S')
+    logging.basicConfig(filename=f'logs/{datetime}.log', level=logging.INFO)
 
 
 def main():
@@ -36,6 +36,11 @@ def main():
 
 
 if __name__ == '__main__':
+    try:
+        log_tools()
+    except Exception as e:
+        print(f"Error: {e}\nFailed to create logging tools\nClosing program")
+        exit(1)
     try:
         main()
     except Exception as e:
